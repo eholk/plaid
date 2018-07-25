@@ -34,6 +34,7 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.net.NetworkRequest;
 import android.os.Bundle;
+import android.os.Trace;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
@@ -124,6 +125,7 @@ public class HomeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Trace.beginSection("Plaid#onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         bindResources();
@@ -239,6 +241,7 @@ public class HomeActivity extends Activity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
         itemTouchHelper.attachToRecyclerView(filtersList);
         checkEmptyState();
+        Trace.endSection();
     }
 
     private void bindResources() {
