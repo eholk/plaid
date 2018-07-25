@@ -127,7 +127,9 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         Trace.beginSection("Plaid#onCreate");
         super.onCreate(savedInstanceState);
+        Trace.beginSection("inflate#activity_home");
         setContentView(R.layout.activity_home);
+        Trace.endSection();
         bindResources();
 
         drawer.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
