@@ -97,6 +97,8 @@ import io.plaidapp.ui.recyclerview.FilterTouchHelperCallback;
 import io.plaidapp.ui.recyclerview.GridItemDividerDecoration;
 import io.plaidapp.ui.transitions.FabTransform;
 
+import io.plaidapp.ui.Views;
+
 public class HomeActivity extends Activity {
 
     private static final int RC_SEARCH = 0;
@@ -128,7 +130,7 @@ public class HomeActivity extends Activity {
         Trace.beginSection("Plaid#onCreate");
         super.onCreate(savedInstanceState);
         Trace.beginSection("inflate#activity_home");
-        setContentView(R.layout.activity_home);
+        setContentView(Views.INSTANCE.inflateActivityHome(this));
         Trace.endSection();
         bindResources();
 

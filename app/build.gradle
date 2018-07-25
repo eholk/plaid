@@ -20,8 +20,15 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion versions.compileSdk
-
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword '1234AbCd'
+            storeFile file('/usr/local/google/home/eholk/Android/keystore.jks')
+            storePassword '1234AbCd'
+        }
+    }
+    compileSdkVersion 28
     defaultConfig {
         applicationId "io.plaidapp"
         minSdkVersion versions.minSdk
@@ -43,8 +50,8 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-
             buildConfigField "boolean", "DESIGNER_NEWS_V2", "false"
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -52,6 +59,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     dynamicFeatures = [':about', ':designernews', ':dribbble']
+    buildToolsVersion '28.0.0'
 }
 
 repositories {
