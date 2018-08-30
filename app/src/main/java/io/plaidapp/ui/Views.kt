@@ -61,7 +61,7 @@ object Views {
 //        println(xml.name + " " + attrs.getAttributeName(1) + "=" + attrs.getAttributeValue(1) + " :: " + R.id.stub_no_filters)
         var stub = ViewStub(context, attrs)
         val inflater = LayoutInflater.from(context)
-        stub.layoutInflater = inflater.cloneInContext(context)
+        //stub.layoutInflater = inflater.cloneInContext(context)
         layout_params = frame.generateLayoutParams(attrs)
         frame.addView(stub, layout_params)
         xml.next() // </ViewStub>
@@ -69,7 +69,7 @@ object Views {
         xml.next() // <ViewStub>
         //println(xml.name + " " + attrs.getAttributeName(1) + "=" + attrs.getAttributeValue(1) + " :: " + R.id.stub_no_connection)
         stub = ViewStub(context, attrs)
-        stub.layoutInflater = inflater.cloneInContext(context)
+        //stub.layoutInflater = inflater.cloneInContext(context)
         layout_params = frame.generateLayoutParams(attrs)
         frame.addView(stub, layout_params)
         xml.next() // </ViewStub>
@@ -83,7 +83,7 @@ object Views {
         xml.next() // <ViewStub>
 //        println(xml.name + " " + attrs.getAttributeName(1) + "=" + attrs.getAttributeValue(1) + " :: " + R.id.stub_posting_progress)
         stub = ViewStub(context, attrs)
-        stub.layoutInflater = inflater.cloneInContext(context)
+        //stub.layoutInflater = inflater.cloneInContext(context)
         layout_params = frame.generateLayoutParams(attrs)
         frame.addView(stub, layout_params)
         xml.next() // </ViewStub>
