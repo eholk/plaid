@@ -177,6 +177,7 @@ public class CollapsingTitleLayout extends FrameLayout implements ReflowText.Ref
                     paint.setTypeface(font);
                 }
             } catch (Resources.NotFoundException nfe) {
+                System.out.println(nfe);
                 // swallow; use default typeface
             }
         }

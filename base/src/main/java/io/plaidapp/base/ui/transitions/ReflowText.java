@@ -454,7 +454,9 @@ public class ReflowText extends Transition {
                 if (font != null) {
                     paint.setTypeface(font);
                 }
-            } catch (Resources.NotFoundException nfe) { }
+            } catch (Resources.NotFoundException nfe) {
+                System.err.println(nfe.getMessage());
+            }
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

@@ -42,6 +42,7 @@ public class ImeUtils {
             showSoftInputUnchecked.setAccessible(true);
             showSoftInputUnchecked.invoke(imm, 0, null);
         } catch (Exception e) {
+            System.err.println(e);
             // ho hum
         }
     }

@@ -109,6 +109,7 @@ public class PostStoryService extends IntentService {
             }
         } catch (Exception e) {
             final String reason = e.getMessage();
+            System.err.println(reason);
             if (broadcastResult) {
                 broadcastFailure(reason);
             } else {
