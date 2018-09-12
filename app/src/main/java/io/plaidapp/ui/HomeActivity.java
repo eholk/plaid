@@ -75,6 +75,7 @@ import java.util.Collections;
 import java.util.List;
 
 import io.plaidapp.R;
+import io.plaidapp.CompiledView;
 import io.plaidapp.base.data.DataManager;
 import io.plaidapp.base.data.PlaidItem;
 import io.plaidapp.base.data.Source;
@@ -130,7 +131,8 @@ public class HomeActivity extends Activity {
         Trace.beginSection("Plaid#onCreate");
         super.onCreate(savedInstanceState);
         Trace.beginSection("inflate#activity_home");
-        setContentView(Views.INSTANCE.inflateActivityHome(this));
+        //setContentView(Views.INSTANCE.inflateActivityHome(this));
+        setContentView(CompiledView.inflate(this));
         Trace.endSection();
         bindResources();
 
